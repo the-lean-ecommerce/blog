@@ -1,0 +1,24 @@
+title: The Lean Ecommerce Blog
+description: Practical guides, insights, and resources for ecommerce operators.
+url: "https://the-lean-ecommerce.github.io"
+baseurl: ""
+github_repo_url: "https://github.com/the-lean-ecommerce/the-lean-ecommerce.github.io"
+
+permalink: /:year/:month/:day/:title/
+
+markdown: kramdown
+paginate: 30
+paginate_path: "/page:num/"
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-paginate
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "The Lean Ecommerce"

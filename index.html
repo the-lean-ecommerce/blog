@@ -1,0 +1,46 @@
+---
+layout: default
+title: Blog
+---
+
+<section class="hero">
+  <p class="eyebrow">Field notes for modern operators</p>
+  <h1>The Lean Ecommerce Blog</h1>
+  <p>Practical guides on ecommerce systems, SaaS tools, automation, and the quiet work of making an online business run better.</p>
+  <a class="hero-link" href="https://the-lean-ecommerce.com">Explore The Lean Ecommerce</a>
+</section>
+
+<div class="section-kicker">
+  <span>Latest dispatches</span>
+  <span>30 per page</span>
+</div>
+
+<section class="post-list" aria-label="Latest blog posts">
+  {% assign posts = paginator.posts | default: site.posts %}
+  {% for post in posts %}
+    <article class="post-card">
+      <p class="post-date">{{ post.date | date: "%B %-d, %Y" }}</p>
+      <h2>
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      </h2>
+
+      {% if post.description %}
+        <p>{{ post.description }}</p>
+      {% endif %}
+    </article>
+  {% endfor %}
+</section>
+
+{% if paginator.total_pages > 1 %}
+  <nav class="pagination" aria-label="Pagination">
+    {% if paginator.previous_page %}
+      <a href="{{ paginator.previous_page_path | relative_url }}">Newer posts</a>
+    {% endif %}
+
+    <span>Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+
+    {% if paginator.next_page %}
+      <a href="{{ paginator.next_page_path | relative_url }}">Older posts</a>
+    {% endif %}
+  </nav>
+{% endif %}
