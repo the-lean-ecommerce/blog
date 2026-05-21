@@ -312,6 +312,31 @@ a {
   box-shadow: 5px 5px 0 var(--shadow);
 }
 
+.post-card-thumb {
+  display: block;
+  margin: -4px -4px 18px;
+  border: 2px solid var(--border);
+  background: var(--surface);
+  box-shadow: 4px 4px 0 var(--shadow);
+}
+
+.post-card-thumb img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.post-hero-image {
+  display: block;
+  width: 100%;
+  max-height: 430px;
+  margin-top: 26px;
+  border: 2px solid var(--border);
+  object-fit: cover;
+  box-shadow: 5px 5px 0 var(--shadow);
+}
+
 .site-footer {
   display: flex;
   justify-content: space-between;

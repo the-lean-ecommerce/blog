@@ -19,14 +19,21 @@ title: Blog
   {% assign posts = paginator.posts | default: site.posts %}
   {% for post in posts %}
     <article class="post-card">
-      <p class="post-date">{{ post.date | date: "%B %-d, %Y" }}</p>
-      <h2>
-        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-      </h2>
-
-      {% if post.description %}
-        <p>{{ post.description }}</p>
+      {% if post.image %}
+        <a class="post-card-thumb" href="{{ post.url | relative_url }}" aria-label="{{ post.title }}">
+          <img src="{{ post.image | relative_url }}" alt="">
+        </a>
       {% endif %}
+      <div class="post-card-body">
+        <p class="post-date">{{ post.date | date: "%B %-d, %Y" }}</p>
+        <h2>
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </h2>
+
+        {% if post.description %}
+          <p>{{ post.description }}</p>
+        {% endif %}
+      </div>
     </article>
   {% endfor %}
 </section>
